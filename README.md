@@ -55,7 +55,7 @@ M3D模型中图像使用的是固定的分辨率(32, 256, 256)，因此我们需
 ## 2. tran clip model
 1. 修改dataset的读取文件。
 
-以M3D提供的(class CapDataset(Dataset))[https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132]为例，读取图像npy文件和对应的文本text文件
+以M3D提供的[class CapDataset(Dataset)](https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132)为例，读取图像npy文件和对应的文本text文件
 2. 运行clip训练脚本
 
 
