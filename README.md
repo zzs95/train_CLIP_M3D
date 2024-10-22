@@ -2,7 +2,7 @@ Here is the tutorial for training a CLIP model on your own 3D medical image data
 
 # Training a CLIP Model Using 3D Medical Image Data
 
-This guide explains how to train a CLIP model using 3D medical images and corresponding textual reports. We use the M3D data format for preprocessing, where each sample consists of an image and a text pair. The preprocessing steps are inspired by the [M3D caption dataset example](https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples) and the [data preparation code](https://github.com/zzs95/train_CLIP_M3D/tree/main/Data/data/examples).
+This guide explains how to train a CLIP model using 3D medical images and corresponding textual reports. We use the M3D data format for preprocessing, where each sample consists of an image and a text pair. The preprocessing steps are inspired by the M3D caption data preprocess as an example. [m3d_cap_data_prepare](https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py). And the data example here is [M3D caption dataset example](https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples) and the [data under /Data/data/examples](https://github.com/zzs95/train_CLIP_M3D/tree/main/Data/data/examples).
 
 ### Data Structure Example
 For each sample, images and text are stored together in a folder:
@@ -24,7 +24,6 @@ data_folder
 ```
 
 ## 1. Data Preprocessing
-Using code of M3D caption data preprocess as an example. [m3d_cap_data_prepare](https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py)
 ### a. Image Data Preprocessing
 
 M3D uses fixed resolution images with a shape of `(32, 256, 256)` for the model, meaning we need to preprocess the original DICOM or NIfTI images and convert them into `.npy` format. The preprocessing pipeline involves several key steps:
