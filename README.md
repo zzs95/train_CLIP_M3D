@@ -1,7 +1,7 @@
 # How to train a CLIP model using your own 3D medical image data.
 以M3D的代码为例，使用到caption数据集，即图像和报告pair数据，训练CLIP模型。因此我们使用M3D的数据格式预处理数据。
 ## 1. data preprocessing
-我们可以参考project使用的数据进行预处理，以M3D提供的M3D_caption 数据样例[https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples]和Data/process]下的图像为例。
+我们可以参考project使用的数据进行预处理，以M3D提供的[M3D_caption 数据样例](https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples)和[Data/process]下的图像为例。
 对于一个sample，图像和文本存储在一个文件夹中。 预处理代码可以参考代码中所提供的[https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py]，代码中添加了详细的注释。
 ```data_folder
 -— 000007
