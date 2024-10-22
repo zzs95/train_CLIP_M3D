@@ -3,7 +3,7 @@
 ## 1. data preprocessing
 我们可以参考project使用的数据进行预处理，以M3D提供的M3D_caption 数据样例[https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples]和Data/process]下的图像为例。
 对于一个sample，图像和文本存储在一个文件夹中。 预处理代码可以参考代码中所提供的[https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py]，代码中添加了详细的注释。
-data_folder
+```data_folder
 -— 000007
  |- img.npy
  |- text.txt
@@ -13,6 +13,7 @@ data_folder
 -- 000009
  |- img.npy
  |- text.txt
+```
 ### a. Image data preprocess
 M3D模型中图像使用的是固定的分辨率(32, 256, 256)，因此我们需要先将dicom或者nii.gz 数据转换成npy格式，
 图像预处理操作，包括
