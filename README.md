@@ -2,7 +2,8 @@
 以M3D的代码为例，使用到caption数据集，即图像和报告pair数据，训练CLIP模型。因此我们使用M3D的数据格式预处理数据。
 ## 1. data preprocessing
 我们可以参考project使用的数据进行预处理，以M3D提供的M3D_caption 数据样例[https://huggingface.co/datasets/GoodBaiBai88/M3D-Cap/tree/main/data_examples]和Data/process]下的图像为例。
-对于一个sample，图像和文本存储在一个文件夹中。 预处理代码可以参考代码中所提供的[https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py]
+对于一个sample，图像和文本存储在一个文件夹中。 预处理代码可以参考代码中所提供的[https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py]，代码中添加了详细的注释。
+data_folder
 -— 000007
  |- img.npy
  |- text.txt
@@ -18,13 +19,42 @@ M3D模型中图像使用的是固定的分辨率(32, 256, 256)，因此我们需
 1. 对原始数据进行空间上的矫正，direction、spacing
 2. 裁剪到目标任务关注的区域
 3. 通过cropping 和padding，将图像resize到分辨率(32, 256, 256)
-4. 将3D图像保存成npy格式 
+4. 修改根据任务图像灰度值or HU values
+5. 将3D图像保存成npy格式，保存成文件img.npy
 ### b. Text data preprocess
 1. 从报告中提取我们所关注的文本片段，例如findings或者impression，或者两者、全部文本
 2. 将一个图像所对应的报告文本保存到文件，text.txt，并保存在图像同一目录下
+### c. 构建json文件
+```dataset.json
+{
+    "train": [
+        {
+            "image": "data_folder/000007/img.npy"
+            "text": "data_folder/000007/text.txt"
+        },
+        {
+            "image": "data_folder/000008/img.npy"
+            "text": "data_folder/000008/text.txt"
+        }
+        ]
+    "validation": [
+        {
+            "image": "data_folder/000009/img.npy"
+            "text": "data_folder/000009/text.txt"
+        }
+        ]
+    "test": [
+        {
+            "image": "data_folder/000010/img.npy"
+            "text": "data_folder/000010/text.txt"
+        }
+        ]
+}
+```
 ## 2. tran clip model
 1. 修改dataset的读取文件。
-
+https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132
+以M3D提供的class CapDataset(Dataset)为例，需要将读取
 M3D: Advancing 3D Medical Image Analysis with Multi-Modal Large Language Models
 
 [demo]:https://08778b8abe6ef5b6dd.gradio.live/
