@@ -79,7 +79,7 @@ Example structure for `dataset.json`:
 
 ### a. Modifying the Dataset Loader
 
-To load the image-text pairs for training the CLIP model, you need to modify the dataset loader. An example of a dataset class can be found in [CapDataset](https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132). This class reads `.npy` files for images and corresponding `.txt` files for text. Adjust the file paths to match your dataset's directory structure.
+To load the image-text pairs for training the CLIP model, you need to modify the dataset loader. An example of a dataset class can be found in [CapDataset](https://github.com/zzs95/train_CLIP_M3D/blob/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132). This class reads `.npy` files for images and corresponding `.txt` files for text. Adjust the file paths to match your dataset's directory structure.
 
 ### b. Adjusting Training Script Parameters
 
