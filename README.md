@@ -20,7 +20,7 @@ M3D模型中图像使用的是固定的分辨率(32, 256, 256)，因此我们需
 1. 对原始数据进行空间上的矫正，direction、spacing
 2. 裁剪到目标任务关注的区域
 3. 通过cropping 和padding，将图像resize到分辨率(32, 256, 256)
-4. 修改根据任务图像灰度值or HU values
+4. 修改根据任务图像灰度值or HU values裁剪
 5. 将3D图像保存成npy格式，保存成文件img.npy
 ### b. Text data preprocess
 1. 从报告中提取我们所关注的文本片段，例如findings或者impression，或者两者、全部文本
@@ -54,8 +54,11 @@ M3D模型中图像使用的是固定的分辨率(32, 256, 256)，因此我们需
 ```
 ## 2. tran clip model
 1. 修改dataset的读取文件。
-https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132
-以M3D提供的class CapDataset(Dataset)为例，需要将读取
+
+以M3D提供的(class CapDataset(Dataset))[https://github.com/zzs95/train_CLIP_M3D/blame/782c8f7c673d6167efbe753d57ef635842b7d302/LaMed/src/dataset/multi_dataset.py#L132]为例，读取图像npy文件和对应的文本text文件
+2. 运行clip训练脚本
+
+
 M3D: Advancing 3D Medical Image Analysis with Multi-Modal Large Language Models
 
 [demo]:https://08778b8abe6ef5b6dd.gradio.live/
