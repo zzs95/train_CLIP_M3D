@@ -24,7 +24,7 @@ data_folder
 ```
 
 ## 1. Data Preprocessing
-
+Using code of M3D caption data preprocess as an example. [m3d_cap_data_prepare](https://github.com/zzs95/train_CLIP_M3D/blob/main/Data/process/m3d_cap_data_prepare.py)
 ### a. Image Data Preprocessing
 
 M3D uses fixed resolution images with a shape of `(32, 256, 256)` for the model, meaning we need to preprocess the original DICOM or NIfTI images and convert them into `.npy` format. The preprocessing pipeline involves several key steps:
