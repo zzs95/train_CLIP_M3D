@@ -18,6 +18,9 @@ data_folder
 -- 000009
    |- img.npy
    |- text.txt
+-- 000010
+   |- img.npy
+   |- text.txt
 ```
 
 ## 1. Data Preprocessing
