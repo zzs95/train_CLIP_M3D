@@ -1,4 +1,4 @@
-Here is the tutorial for training a CLIP model on your own 3D medical image data, rewritten in English with added details:
+Here is the tutorial for training a CLIP model on your own 3D medical image data, using M3D source code as an example.
 
 # Training a CLIP Model Using 3D Medical Image Data
 
